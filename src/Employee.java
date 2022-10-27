@@ -38,7 +38,7 @@ public class Employee {
         return fullName + ", " + salary;
     }
     public  boolean equals(Object other){
-        if(other == null|| this.getClass() != other.getClass()){
+        if(other == null || this.getClass() != other.getClass()){
             return false;
         }
         if (this == other){

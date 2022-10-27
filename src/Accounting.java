@@ -57,5 +57,6 @@ public class Accounting {
         System.out.println();
 
         employeeBook.getAllInfoAboutEmployees();
+
     }
 }

@@ -176,7 +176,7 @@ public class EmployeeBook {
         return newDepartmentForEmployee;
     }
     public boolean equals(Object other){
-        if(this == null || this.getClass() != other.getClass()){
+        if(other == null || this.getClass() != other.getClass()){
             return  false;
         }
         if(this == other){
