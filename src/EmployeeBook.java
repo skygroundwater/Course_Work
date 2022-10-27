@@ -142,7 +142,7 @@ public class EmployeeBook {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null)continue;
             Employee employee = employees[i];
-            System.out.println("ID "+employee.getId()+": "+employee.getInfo());
+            System.out.println(employee);
         }
     }
     public void getAllInfoAboutEmployeesFromDepartment(String employeeDepartment){
@@ -151,7 +151,7 @@ public class EmployeeBook {
             if (employees[i] == null) continue;
             Employee employee = employees[i];
             if (employee.getDepartment().equals(employeeDepartment)) {
-                System.out.println("ID "+employee.getId() + ": " + employee.getInfoWithoutDepartment());
+                System.out.println(employee);
             }
         }
     }
@@ -174,5 +174,21 @@ public class EmployeeBook {
             }
         }
         return newDepartmentForEmployee;
+    }
+    public boolean equals(Object other){
+        if(this == null || this.getClass() != other.getClass()){
+            return  false;
+        }
+        if(this == other){
+            return  true;
+        }
+        return Arrays.equals(employees, ((EmployeeBook) other).employees);
+    }
+    public String toString(){
+        return Arrays.toString(employees);
+    }
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hashCode(employees);
     }
 }

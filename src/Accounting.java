@@ -4,6 +4,7 @@ import java.util.stream.IntStream;
 public class Accounting {
     public static void main(String[] args) {
         EmployeeBook employeeBook = new EmployeeBook();
+
         //Базовая сложность
         employeeBook.getAllInfoAboutEmployees();
 
@@ -40,16 +41,21 @@ public class Accounting {
 
         employeeBook.getSalariesIfSalaryMoreThanNumber(120000);
         System.out.println();
+
         //Очень сложно
         employeeBook.removeEmployee("Федоров Максим");
+
         employeeBook.addEmployee("Евстафий Евстафиевич", "Палубная команда", 79400);
+
         employeeBook.getAllInfoAboutEmployeesFromDepartment("Палубная команда");
         System.out.println();
+
         employeeBook.replaceSalaryForEmployee("Евстафий Евстафиевич", 85400);
         employeeBook.replaceDepartmentForEmployee("Евстафий Евстафиевич", "Машинное отделение");
+
         employeeBook.getAllInfoAboutEmployeesFromDepartment("Машинное отделение");
         System.out.println();
-        employeeBook.getAllInfoAboutEmployees();
 
-        }
+        employeeBook.getAllInfoAboutEmployees();
     }
+}
