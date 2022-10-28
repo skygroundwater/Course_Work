@@ -3,25 +3,60 @@ import java.util.stream.IntStream;
 
 public class Accounting {
     public static void main(String[] args) {
-
         EmployeeBook employeeBook = new EmployeeBook();
 
-        employeeBook.addEmployee("Дуравкин Алексей", "Руководящий отдел", 134000);
-        employeeBook.addEmployee("Метелев Олег", "Руководящий отдел", 124500);
-        employeeBook.addEmployee("Федоров Максим", "Отдел связи", 118350);
-        employeeBook.addEmployee("Витюк Григорий", "Отдел связи", 104800);
-        employeeBook.addEmployee("Куриш Виктор", "Палубная команда", 96700);
-        employeeBook.addEmployee("Давитадзе Тариел", "Палубная команда", 91300);
-        employeeBook.addEmployee("Каширский Сергей", "Инженерный отдел", 109700);
-        employeeBook.addEmployee("Горчаков Александр", "Инженерный отдел", 102800);
-        employeeBook.addEmployee("Некрасов Дмитрий", "Машинное отделение", 100300);
-        employeeBook.addEmployee("Говоров Александр", "Машинное отделение", 98600);
+        //Базовая сложность
+        employeeBook.getAllInfoAboutEmployees();
+
+        System.out.println(employeeBook.getMaxSalary());
+
+        System.out.println(employeeBook.getMinSalary());
+
+        System.out.println(employeeBook.getSumOfSalaries());
+
+        System.out.println(employeeBook.getAverageSalary());
+
+        employeeBook.getNamesOfEmployees();
+
+        //Повышенная сложность
+        employeeBook.indexSalaries(10);
 
         employeeBook.getAllInfoAboutEmployees();
-        employeeBook.indexSalaries(30);
 
+        System.out.println(employeeBook.findMaxSalaryOfDepartment("Инженерный отдел"));
 
+        System.out.println(employeeBook.findMinSalaryOfDepartment("Руководящий отдел"));
 
+        System.out.println(employeeBook.getSumSalariesforDepartment("Палубная команда"));
 
-        }
+        System.out.println(employeeBook.getAverageSalaryOfDepartment("Машинное отделение"));
+
+        employeeBook.indexDepartmentSalaries("Отдел связи", 5);
+
+        employeeBook.getAllInfoAboutEmployeesFromDepartment("Отдел связи");
+        System.out.println();
+
+        employeeBook.getSalariesIfSalaryLessThanNumber(120000);
+        System.out.println();
+
+        employeeBook.getSalariesIfSalaryMoreThanNumber(120000);
+        System.out.println();
+
+        //Очень сложно
+        employeeBook.removeEmployee("Федоров Максим");
+
+        employeeBook.addEmployee("Евстафий Евстафиевич", "Палубная команда", 79400);
+
+        employeeBook.getAllInfoAboutEmployeesFromDepartment("Палубная команда");
+        System.out.println();
+
+        employeeBook.replaceSalaryForEmployee("Евстафий Евстафиевич", 85400);
+        employeeBook.replaceDepartmentForEmployee("Евстафий Евстафиевич", "Машинное отделение");
+
+        employeeBook.getAllInfoAboutEmployeesFromDepartment("Машинное отделение");
+        System.out.println();
+
+        employeeBook.getAllInfoAboutEmployees();
+
     }
+}
